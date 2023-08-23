@@ -75,3 +75,5 @@ end
 gem "figaro", "~> 1.2"
 
 gem "bootstrap", "~> 5.3.1"
+
+gem "devise", "~> 4.9"
