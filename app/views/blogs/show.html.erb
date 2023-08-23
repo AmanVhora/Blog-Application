@@ -1,0 +1,15 @@
+<div class="container w-75">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @blog %>
+
+  <div>
+    <% if user_authorized?(@blog) %>    
+      <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
+      <%= link_to "Back to blogs", blogs_path %><br>
+      <%= button_to "Destroy this blog", @blog, method: :delete %>
+    <% else %>
+      <%= link_to "Back to blogs", blogs_path %>
+    <% end %>
+  </div>
+</div>
