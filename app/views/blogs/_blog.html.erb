@@ -1,24 +1,29 @@
-<div class="border rounded-3 p-2 my-2" id="<%= dom_id blog %>">
+<div class="border rounded-3 p-3 my-2" id="<%= dom_id blog %>">
   <div class="d-flex justify-content-between">
     <div>
-      <p>
-        <strong>Title:</strong>
-        <%= blog.title %>
-      </p>
+      <div class="fs-2 "><%= blog.title %></div>
+  
+      <div class="fs-5"><%= blog.description %></div>
 
-      <p>
-        <strong>Description:</strong>
-        <%= blog.description %>
-      </p>
+      <div class="fs-5"><strong>Created by:</strong> <%= blog.user.user_name %></div>
 
-      <p>
-        <strong>Created by:</strong>
-        <%= blog.user.user_name %>
-      </p>
+      <% if action_name == "show" %>
+        <div>
+          <% if user_authorized?(blog) %>
+            <%= link_to "Edit this blog", edit_blog_path(blog) %> |
+            <%= link_to "Back to blogs", blogs_path %>
+            <%= button_to "Destroy this blog", blog_path(blog), method: :delete, class: "btn btn-danger rounded-1 mt-1" %>
+          <% else %>
+            <%= link_to "Back to blogs", blogs_path %>
+          <% end %>
+        </div>
+      <% else %>
+        <%= link_to "Show this blog", blog_path(blog) %>
+      <% end %>
     </div>
 
     <div>
-      <%= image_tag blog.cover_image, size: "150x120" %>
+      <%= image_tag blog.cover_image, size: "170x140", class: "img-fuild" %>
     </div>
   </div>
 </div>
