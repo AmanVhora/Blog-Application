@@ -1,0 +1,14 @@
+<div class="container w-50">
+  <div class="d-flex justify-content-between">
+    <h1>Posts</h1>
+    <% if blog_user_authorized?(@blog) %>
+      <div class="m-auto me-0"><%= link_to "New post", new_blog_post_path(@blog), class: "btn btn-primary rounded-1" %></div>
+    <% end %>
+  </div>
+
+  <div id="posts">
+    <% @posts.each do |post| %>
+      <%= render post %>
+    <% end %>
+  </div>
+</div>

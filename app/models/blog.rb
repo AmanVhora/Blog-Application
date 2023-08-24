@@ -1,5 +1,6 @@
 class Blog < ApplicationRecord
   belongs_to :user
+  has_many :posts, dependent: :destroy
   has_one_attached :cover_image
 
   validates :title, presence: true, length: { maximum: 100 }
