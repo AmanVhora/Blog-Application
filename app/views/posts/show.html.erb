@@ -1,3 +1,12 @@
 <div class="container w-50">
   <%= render @post %>
+
+  <div class="mt-5 d-flex justify-content-between">
+    <div class="fs-2">Comments</div>
+    <div class="m-auto me-0"><%= link_to "Add Comment", new_post_comment_path(@post), class: "btn btn-primary rounded-1" %></div>
+  </div>
+
+  <div class="mt-3 border rounded-3 p-3">
+    <%= render 'comments/comments', comment_type: @post %>
+  </div>
 </div>

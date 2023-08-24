@@ -10,8 +10,23 @@
 
     <div>Category: <%= post.post_category.name %></div>
 
-    <div>
-      <% if action_name == "show" %>        
+    <% if action_name == "show" %>
+      <div class="container d-flex justify-content-center">
+        <div class="m-auto me-0">
+          <% if post_liked(@post) %>
+            <% like_id = @post.likes.find_by_user_id(current_user).id %>
+            <%= button_to raw('<i class="fa-solid fa-thumbs-up fa-xl"></i>'), post_like_path(@post, like_id), method: :delete, class: "btn" %>
+          <% else %>
+            <%= button_to raw('<i class="fa-regular fa-thumbs-up fa-xl"></i>'), post_likes_path(@post), class: "btn" %>
+          <% end %>
+        </div>
+
+        <div class="m-auto ms-0">
+          <%= @post.likes.count %>
+        </div>
+      </div>
+    
+      <div>
         <% if user_authorized?(post) %>
           <%= link_to "Edit this post", edit_blog_post_path(@blog, post) %> |
           <%= link_to "Back to posts", blog_posts_path(@blog) %>
@@ -19,9 +34,9 @@
         <% else %>
           <%= link_to "Back to posts", blog_posts_path(@blog) %>
         <% end %>
-      <% else %>
-        <%= link_to "Show this post", blog_post_path(@blog, post) %>
-      <% end %>
-    </div>
+      </div>
+    <% else %>
+      <%= link_to "Show this post", blog_post_path(@blog, post) %>
+    <% end %>
   </div>
 </div>
