@@ -1,0 +1,27 @@
+<%= form_with(model: post, url: custom_path) do |form| %>
+  <%= render 'shared/error_messages', resource: post %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, class: "form-label" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :post_image, class: "form-label" %>
+    <%= form.file_field :post_image, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :post_category, class: "form-label" %>
+    <%= form.select :post_category_id, options_from_collection_for_select(PostCategory.all, :id, :name), { include_blank: "Select Category" }, class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= form.submit class: "btn btn-primary rounded-1" %>
+  </div>
+<% end %>

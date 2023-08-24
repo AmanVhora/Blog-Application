@@ -1,0 +1,9 @@
+<div class="container w-75">
+  <h1>Editing post</h1>
+  <%= render "form", post: @post, custom_path: blog_post_path(@blog, @post) %>
+
+  <div>
+    <%= link_to "Show this post", blog_post_path(@post) %> |
+    <%= link_to "Back to posts", blog_posts_path(@blog) %>
+  </div>
+</div>

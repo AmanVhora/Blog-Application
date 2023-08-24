@@ -1,0 +1,8 @@
+<div class="container w-75">
+  <h1>New post</h1>
+  <%= render "form", post: @post, custom_path: blog_posts_path(@blog) %>
+
+  <div>
+    <%= link_to "Back to posts", blog_posts_path(@blog) %>
+  </div>
+</div>

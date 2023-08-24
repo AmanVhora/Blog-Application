@@ -1,0 +1,17 @@
+<div class="comments">
+  <% comment_type.comments.each do |comment| %>
+    <div class="comment d-flex">
+      <div>
+        <%= comment.user.user_name %> <br>
+        <%= comment.content %>
+      </div>
+
+      <div class="m-auto me-0">
+        <% if comment.user == current_user %>
+          <%= button_to 'Delete', post_comment_path(@post.id, comment), method: :delete, class: 'btn btn-danger btn-sm' %>
+        <% end %>
+      </div>
+    </div>
+    <hr class="mt-0">
+  <% end %>
+</div>
