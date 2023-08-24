@@ -1,8 +1,0 @@
-<div class="container d-flex justify-content-between">
-  <div class="m-auto"><h1>Hi <%= current_user.user_name %>, Welcome to the Blog site.</h1></div>
-  <div class="m-auto"><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger rounded-1' %></div>
-</div>
-
-<div class="container text-center mt-5">
-  <%= link_to 'Go to Blogs', blogs_path, class: "btn btn-primary rounded-5" %>
-</div>

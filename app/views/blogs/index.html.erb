@@ -1,16 +1,12 @@
 <div class="container w-50">
-  <p style="color: green"><%= notice %></p>
-
-  <h1>Blogs</h1>
+  <div class="d-flex justify-content-between">
+    <h1>Blogs</h1>
+    <div class="m-auto me-0"><%= link_to "New blog", new_blog_path, class: "btn btn-primary rounded-1" %></div>
+  </div>
 
   <div id="blogs">
     <% @blogs.each do |blog| %>
       <%= render blog %>
-      <p>
-        <%= link_to "Show this blog", blog %>
-      </p>
     <% end %>
   </div>
-
-  <%= link_to "New blog", new_blog_path %>
 </div>
