@@ -9,4 +9,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
   validates :user_name, presence: true, uniqueness: true
+
+  private
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at email user_name]
+  end
 end

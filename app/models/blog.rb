@@ -6,4 +6,10 @@ class Blog < ApplicationRecord
   validates :title, presence: true, length: { maximum: 100 }
   validates :description, presence: true
   validates :cover_image, presence: true
+
+  private
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at title]
+  end
 end

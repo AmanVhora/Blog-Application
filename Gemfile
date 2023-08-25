@@ -77,3 +77,7 @@ gem "figaro", "~> 1.2"
 gem "bootstrap", "~> 5.3.1"
 
 gem "devise", "~> 4.9"
+
+gem "activeadmin", "~> 3.0"
+
+gem "active_skin", "~> 0.0.13"
