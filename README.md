@@ -1,24 +1,33 @@
-# README
+# Setting Up Blog Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
+Before you begin, make sure you have the following tools and technologies installed on your machine:
 
-Things you may want to cover:
+Ruby version - 3.2.1    
+Rails version - 7.0.7
 
-* Ruby version
+## Clone Project
+Clone the Repository using command:     
+git clone https://github.com/AmanVhora/Blog-Application.git
 
-* System dependencies
+Then Move into the project's directory using the command:       
+cd repository-name
 
-* Configuration
+## Install Dependencies
+Install the required gems using command:    
+bundle install
 
-* Database creation
+## Set Up the Database
+Database Configuration: Go to the config/database.yml file and provide your database credentials.
 
-* Database initialization
+Database Setup: Run following commands.
 
-* How to run the test suite
+rails db:create          # Create the database  
+rails db:migrate         # Run migrations   
+rails db:seed            # Seed the database with sample data
 
-* Services (job queues, cache servers, search engines, etc.)
+## Start the Application
+Start application with command:     
+rails s
 
-* Deployment instructions
-
-* ...
+Then open your web browser and go to http://localhost:3000 to access the application.
