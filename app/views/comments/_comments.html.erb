@@ -8,7 +8,7 @@
 
       <div class="m-auto me-0">
         <% if comment.user == current_user %>
-          <%= button_to 'Delete', post_comment_path(@post.id, comment), method: :delete, class: 'btn btn-danger btn-sm' %>
+          <%= button_to 'Delete', blog_post_comment_path(@post.blog_id, @post.id, comment), method: :delete, class: 'btn btn-danger btn-sm' %>
         <% end %>
       </div>
     </div>
