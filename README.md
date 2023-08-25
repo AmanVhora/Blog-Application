@@ -11,7 +11,7 @@ Clone the Repository using command:
 git clone https://github.com/AmanVhora/Blog-Application.git
 
 Then Move into the project's directory using the command:       
-cd repository-name
+cd blog-application
 
 ## Install Dependencies
 Install the required gems using command:    
