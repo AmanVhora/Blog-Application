@@ -3,11 +3,7 @@
 one:
   content: MyText
   user: one
-  commentable: one
-  commentable_type: Commentable
 
 two:
   content: MyText
   user: two
-  commentable: two
-  commentable_type: Commentable
